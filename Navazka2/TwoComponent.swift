@@ -11,7 +11,7 @@ import UIKit
 
 class TwoComponentViewController: UIViewController, CofficientBoardDelegate {
     
-    
+    var cofficients = [CofficientModel]()
     
     @IBOutlet weak var volumeView: UITextField!
     @IBOutlet weak var porosityView: UITextField!
@@ -45,14 +45,27 @@ class TwoComponentViewController: UIViewController, CofficientBoardDelegate {
     }
     func saveCofficients(cofficient: [CofficientModel]) {
     print(cofficient)
+        cofficients = cofficient
     }
     
+ 
     func totalDansity() {
         if let nomberElement = nomberElementView.text,
-            let newNoberElement = Int(nomberElement)
+            let newNoberElement = Double(nomberElement)
         {
-            if newNoberElement == 2 {
-                self.values
+//            if newNoberElement == 2 {
+//                for element in cofficients {
+//                    element.value
+//                }
+                cofficients.enumerated().forEach { (index,velue) in
+//                    velue *
+                    let result = cofficients.map({$0.value})//.reduce(index,*)
+                    let newResult:Double = result.reduce(1,*)/velue.value
+                    print(newResult)
+                    let resultOneComponent = newResult * 
+                }
+                    
+                
             }
             
         }
@@ -64,7 +77,7 @@ class TwoComponentViewController: UIViewController, CofficientBoardDelegate {
     }
     
     @IBAction func countResult(_ sender: UIButton) {
-        
+        totalDansity()
         
     }
     
