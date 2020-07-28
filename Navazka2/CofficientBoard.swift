@@ -38,13 +38,30 @@ class CofficientBoard: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if elementValue == 3 {
+        if elementValue == 5 {
+            nameFiveElementView.isHidden = false
+            valueFiveElementView.isHidden = false
+            percentFiveElementView.isHidden = false
+            nameFourElementView.isHidden = false
+            valueFourElementView.isHidden = false
+            percentFourElementView.isHidden = false
             nameThreeElementView.isHidden = false
             valueThreeElementView.isHidden = false
             percentThreeElementView.isHidden = false
+        } else if elementValue == 4 {
+            nameFourElementView.isHidden = false
+            valueFourElementView.isHidden = false
+            percentFourElementView.isHidden = false
+            nameThreeElementView.isHidden = false
+            valueThreeElementView.isHidden = false
+            percentThreeElementView.isHidden = false
+        } else if elementValue == 3 {
+            nameThreeElementView.isHidden = false
+            valueThreeElementView.isHidden = false
+            percentThreeElementView.isHidden = false
+            
         }
     }
-    
     
     
     @IBAction func saveAction(_ sender: Any) {
@@ -65,12 +82,30 @@ class CofficientBoard: UIViewController {
         values.append(contentsOf: [value1, value2])
         if elementValue == 3,
             let name3 = nameThreeElementView.text,
-            let value3String = valueTwoElementView.text,
+            let value3String = valueThreeElementView.text,
             let value3Double = Double(value3String),
             let percent3 = percentThreeElementView.text,
             let percent3Double = Double(percent3) {
             let value3 = CofficientModel(name: name3, value: value3Double, procient: percent3Double)
             values.append(value3)
+        }
+        if elementValue == 4,
+            let name4 = nameFourElementView.text,
+            let value4String = valueFourElementView.text,
+            let value4Double = Double(value4String),
+            let percent4 = percentFourElementView.text,
+            let percent4Double = Double(percent4) {
+            let value4 = CofficientModel(name: name4, value: value4Double, procient: percent4Double)
+            values.append(value4)
+        }
+        if elementValue == 5,
+            let name5 = nameFiveElementView.text,
+            let value5String = valueFiveElementView.text,
+            let value5Double = Double(value5String),
+            let percent5 = percentFiveElementView.text,
+            let percent5Double = Double(percent5) {
+            let value5 = CofficientModel(name: name5, value: value5Double, procient: percent5Double)
+            values.append(value5)
         }
         
         deligete?.saveCofficients(cofficient: values)

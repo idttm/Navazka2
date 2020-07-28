@@ -29,7 +29,7 @@ class TwoComponentViewController: UIViewController, CofficientBoardDelegate {
         var result:Double = Double(volume)! * Double(porosity)! * Double(defaultCoeffic) * porosity1
         
     }
-   
+    
 
     @IBAction func showCofficientBoardAction(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -47,6 +47,16 @@ class TwoComponentViewController: UIViewController, CofficientBoardDelegate {
     print(cofficient)
     }
     
+    func totalDansity() {
+        if let nomberElement = nomberElementView.text,
+            let newNoberElement = Int(nomberElement)
+        {
+            if newNoberElement == 2 {
+                self.values
+            }
+            
+        }
+    }
     
     @IBAction func stepperAction(_ sender: UIStepper) {
         
@@ -54,6 +64,8 @@ class TwoComponentViewController: UIViewController, CofficientBoardDelegate {
     }
     
     @IBAction func countResult(_ sender: UIButton) {
+        
+        
     }
     
     
