@@ -18,18 +18,31 @@ class TwoComponentViewController: UIViewController, CofficientBoardDelegate {
     @IBOutlet weak var nomberElementView: UILabel!
     @IBOutlet weak var cofficientView: UITextField!
     
-    func resultTwo () {
+    func resultTwo () -> Double {
         let volume = volumeView.text!
         let porosity = porosityView.text!
         var defaultCoeffic:Double = 1.01
-        let porosity1:Double = 1 - Double(porosity)! / 100
-        if let coeffic1 = cofficientView.text, let doubleValue = Double(coeffic1) {
+        let porosity1:Double = 1 - (Double(porosity)! / 100)
+        if let coeffic1 = cofficientView.text,
+           let doubleValue = Double(coeffic1) {
            defaultCoeffic = doubleValue
         }
-        var result:Double = Double(volume)! * Double(porosity)! * Double(defaultCoeffic) * porosity1
+        let result:Double = Double(volume)! * porosity1 * Double(defaultCoeffic) * totalDansity()
+        print(result)
+        return result
+       
         
     }
     
+    func resultEveryElement () {
+        var elements = [Double]()
+        var endElement = [Double]()
+        var reslutArray = [Double]()
+        let elements2 = cofficients.map({$0.procient})
+        elements.append(contentsOf: elements2)
+        reslutArray = elements2.map({$0 * resultTwo()})
+        endElement.append(contentsOf: reslutArray.map({$0 / 100}))
+        }
 
     @IBAction func showCofficientBoardAction(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -48,27 +61,18 @@ class TwoComponentViewController: UIViewController, CofficientBoardDelegate {
         cofficients = cofficient
     }
     
- 
-    func totalDansity() {
-        if let nomberElement = nomberElementView.text,
-            let newNoberElement = Double(nomberElement)
-        {
-//            if newNoberElement == 2 {
-//                for element in cofficients {
-//                    element.value
-//                }
-                cofficients.enumerated().forEach { (index,velue) in
-//                    velue *
-                    let result = cofficients.map({$0.value})//.reduce(index,*)
-                    let newResult:Double = result.reduce(1,*)/velue.value
-                    print(newResult)
-                    let resultOneComponent = newResult * 
-                }
-                    
-                
-            }
-            
+    func totalDansity() -> Double {
+        var resultDovn = [Double]()
+        cofficients.enumerated().forEach { (index,velue) in
+            let result = cofficients.map({$0.value})//.reduce(index,*)
+            let newResult:Double = result.reduce(1,*)/velue.value * (velue.procient/100)
+            resultDovn.append(newResult)
         }
+        let resultSumm = resultDovn.reduce(0,+)
+        let summUp = cofficients.map({$0.value})
+        let newSummUp = summUp.reduce(1,*)
+        let endResult = newSummUp / resultSumm
+        return endResult
     }
     
     @IBAction func stepperAction(_ sender: UIStepper) {
@@ -77,11 +81,8 @@ class TwoComponentViewController: UIViewController, CofficientBoardDelegate {
     }
     
     @IBAction func countResult(_ sender: UIButton) {
-        totalDansity()
+        resultEveryElement()
         
     }
-    
-    
-    
     
 }

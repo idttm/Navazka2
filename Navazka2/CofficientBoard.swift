@@ -36,8 +36,11 @@ class CofficientBoard: UIViewController {
     @IBOutlet weak var percentFourElementView: UITextField!
     @IBOutlet weak var percentFiveElementView: UITextField!
     
+    @IBOutlet weak var errorTableView: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         if elementValue == 5 {
             nameFiveElementView.isHidden = false
             valueFiveElementView.isHidden = false
@@ -59,10 +62,29 @@ class CofficientBoard: UIViewController {
             nameThreeElementView.isHidden = false
             valueThreeElementView.isHidden = false
             percentThreeElementView.isHidden = false
-            
         }
+        if errorTableView != nil {
+            errorTableView.isHidden = false
+        }
+       
     }
     
+    func errorPercent() {
+        guard let proc1S = percentOneElementView.text,
+            let proc1D = Double(proc1S),
+            let proc2S = percentTwoElementView.text,
+            let proc2D = Double(proc2S),
+            let proc3S = percentThreeElementView.text,
+            let proc3D = Double(proc3S),
+            let proc4S = percentFourElementView.text,
+            let proc4D = Double(proc4S),
+            let proc5S = percentFiveElementView.text,
+            let proc5D = Double(proc5S)
+            else { return }
+        if proc1D + proc2D + proc3D + proc4D + proc5D != 100 {
+            errorTableView.text = "Процентноее соотношение компонетнов неверно"
+        }
+    }
     
     @IBAction func saveAction(_ sender: Any) {
         var values = [CofficientModel]()
@@ -80,6 +102,7 @@ class CofficientBoard: UIViewController {
         let value1 = CofficientModel(name: name1, value: value1Double, procient: percent1Double)
         let value2 = CofficientModel(name: name2, value: value2Double, procient: percent2Double)
         values.append(contentsOf: [value1, value2])
+        
         if elementValue == 3,
             let name3 = nameThreeElementView.text,
             let value3String = valueThreeElementView.text,
@@ -89,6 +112,7 @@ class CofficientBoard: UIViewController {
             let value3 = CofficientModel(name: name3, value: value3Double, procient: percent3Double)
             values.append(value3)
         }
+        
         if elementValue == 4,
             let name4 = nameFourElementView.text,
             let value4String = valueFourElementView.text,
@@ -98,6 +122,7 @@ class CofficientBoard: UIViewController {
             let value4 = CofficientModel(name: name4, value: value4Double, procient: percent4Double)
             values.append(value4)
         }
+        
         if elementValue == 5,
             let name5 = nameFiveElementView.text,
             let value5String = valueFiveElementView.text,
@@ -107,9 +132,21 @@ class CofficientBoard: UIViewController {
             let value5 = CofficientModel(name: name5, value: value5Double, procient: percent5Double)
             values.append(value5)
         }
-        
+            
         deligete?.saveCofficients(cofficient: values)
-        dismiss(animated: true)
+        guard let proc3S = percentThreeElementView.text,
+        let proc3D = Double(proc3S),
+        let proc4S = percentFourElementView.text,
+        let proc4D = Double(proc4S),
+        let proc5S = percentFiveElementView.text,
+        let proc5D = Double(proc5S)
+            else { return }
+        func errorPercent () {
+        if percent1Double + percent2Double + proc3D + proc4D + proc5D != 100 {
+            errorTableView.text = "Процентноее соотношение компонетнов неверно"
+        } else {  dismiss(animated: true) }
+    }
+       
         
 
     }
