@@ -33,16 +33,26 @@ class TwoComponentViewController: UIViewController, CofficientBoardDelegate {
        
         
     }
-    
-    func resultEveryElement () {
-        var elements = [Double]()
-        var endElement = [Double]()
-        var reslutArray = [Double]()
-        let elements2 = cofficients.map({$0.procient})
-        elements.append(contentsOf: elements2)
-        reslutArray = elements2.map({$0 * resultTwo()})
-        endElement.append(contentsOf: reslutArray.map({$0 / 100}))
+    // разобраться
+//    func resultEveryElement () -> [Double] {
+//        let conct = resultTwo()
+//        let elements2 = cofficients.map({$0.procient})
+//        print(elements2.map({$0 * conct / 100}))
+//        return elements2.map({$0 * conct / 100})
+//        }
+//    func outPutReseult () {
+//        let resultElement = resultEveryElement()
+//        let nameElement = cofficients.map({$0.name})
+//        return
+//            cofficients.forEach {
+//                print("\($0.name), количество вещества в г/см^3 -  \($0.re)")
+//        }
+//    }
+    func outputReseult () {
+        cofficients.forEach {
+            print("\($0.name), количество вещества в г/см^3 - \($0.procient * resultTwo() / 100)")
         }
+    }
 
     @IBAction func showCofficientBoardAction(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -81,7 +91,7 @@ class TwoComponentViewController: UIViewController, CofficientBoardDelegate {
     }
     
     @IBAction func countResult(_ sender: UIButton) {
-        resultEveryElement()
+       outputReseult()
         
     }
     

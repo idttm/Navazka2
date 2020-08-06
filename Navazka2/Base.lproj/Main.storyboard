@@ -131,7 +131,7 @@
                                 <connections>
                                     <action selector="countAction:" destination="HRS-Q0-bDw" eventType="touchUpInside" id="7mg-Lz-27C"/>
                                     <action selector="countResult:" destination="9U0-sM-qZi" eventType="touchUpInside" id="nm9-DZ-D6f"/>
-                                    <segue destination="0Qq-dL-APq" kind="show" id="PDx-lX-7u7"/>
+                                    <segue destination="6Hr-Nd-hGQ" kind="show" id="nQe-Hm-Oxh"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -277,8 +277,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JTU-31-ASU">
-                                <rect key="frame" x="16" y="58" width="343" height="33"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JTU-31-ASU">
+                                <rect key="frame" x="16" y="36" width="343" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -413,28 +413,31 @@
             </objects>
             <point key="canvasLocation" x="1863.2" y="97.601199400299862"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="q6q-Hf-IbA">
+        <!--Result Two Component-->
+        <scene sceneID="cvN-Ib-utK">
             <objects>
-                <viewController id="0Qq-dL-APq" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="NHo-G3-2p7">
+                <viewController id="6Hr-Nd-hGQ" customClass="ResultTwoComponent" customModule="Navazka2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="A9e-RV-0bg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Результат" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2X7-30-0Fi" customClass="ResultTwoComponentViewController">
-                                <rect key="frame" x="65" y="127" width="246" height="407"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fov-O8-lZb">
+                                <rect key="frame" x="16" y="91" width="343" height="480"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="xyM-OW-I0N"/>
+                        <viewLayoutGuide key="safeArea" id="gAb-Mt-qlj"/>
                     </view>
-                    <navigationItem key="navigationItem" id="VHg-GW-MIW"/>
+                    <navigationItem key="navigationItem" id="6OT-JF-cJU"/>
+                    <connections>
+                        <outlet property="resultView" destination="Fov-O8-lZb" id="HMT-ta-BPc"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nzc-t9-UUA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rca-6K-CxR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2704.8000000000002" y="97.601199400299862"/>
         </scene>

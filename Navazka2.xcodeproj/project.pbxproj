@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		3E046E0D24CCB36C00470158 /* TwoComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E046E0C24CCB36C00470158 /* TwoComponent.swift */; };
 		3E046E0F24CCB8DF00470158 /* CofficientBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E046E0E24CCB8DF00470158 /* CofficientBoard.swift */; };
-		3E046E1124CCBE5E00470158 /* ResultTwoComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E046E1024CCBE5E00470158 /* ResultTwoComponent.swift */; };
 		3E046E1324CE182500470158 /* CofficientModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E046E1224CE182500470158 /* CofficientModel.swift */; };
 		3E25C52224C6E203009F0B4F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E25C52124C6E203009F0B4F /* AppDelegate.swift */; };
 		3E25C52424C6E203009F0B4F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E25C52324C6E203009F0B4F /* SceneDelegate.swift */; };
@@ -18,12 +17,12 @@
 		3E25C52B24C6E205009F0B4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E25C52A24C6E205009F0B4F /* Assets.xcassets */; };
 		3E25C52E24C6E205009F0B4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E25C52C24C6E205009F0B4F /* LaunchScreen.storyboard */; };
 		3E25C53624C6E82C009F0B4F /* OneComponentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E25C53524C6E82C009F0B4F /* OneComponentViewController.swift */; };
+		3E3E77F724D9A5020013E318 /* ResultTwoComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3E77F624D9A5020013E318 /* ResultTwoComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3E046E0C24CCB36C00470158 /* TwoComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoComponent.swift; sourceTree = "<group>"; };
 		3E046E0E24CCB8DF00470158 /* CofficientBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CofficientBoard.swift; sourceTree = "<group>"; };
-		3E046E1024CCBE5E00470158 /* ResultTwoComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTwoComponent.swift; sourceTree = "<group>"; };
 		3E046E1224CE182500470158 /* CofficientModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CofficientModel.swift; sourceTree = "<group>"; };
 		3E25C51E24C6E203009F0B4F /* Navazka2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Navazka2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E25C52124C6E203009F0B4F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -34,6 +33,7 @@
 		3E25C52D24C6E205009F0B4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3E25C52F24C6E205009F0B4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E25C53524C6E82C009F0B4F /* OneComponentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneComponentViewController.swift; sourceTree = "<group>"; };
+		3E3E77F624D9A5020013E318 /* ResultTwoComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTwoComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +74,7 @@
 				3E046E0C24CCB36C00470158 /* TwoComponent.swift */,
 				3E046E0E24CCB8DF00470158 /* CofficientBoard.swift */,
 				3E046E1224CE182500470158 /* CofficientModel.swift */,
-				3E046E1024CCBE5E00470158 /* ResultTwoComponent.swift */,
+				3E3E77F624D9A5020013E318 /* ResultTwoComponent.swift */,
 				3E25C52A24C6E205009F0B4F /* Assets.xcassets */,
 				3E25C52C24C6E205009F0B4F /* LaunchScreen.storyboard */,
 				3E25C52F24C6E205009F0B4F /* Info.plist */,
@@ -153,7 +153,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E046E1124CCBE5E00470158 /* ResultTwoComponent.swift in Sources */,
 				3E046E0F24CCB8DF00470158 /* CofficientBoard.swift in Sources */,
 				3E25C52624C6E203009F0B4F /* ViewController.swift in Sources */,
 				3E046E1324CE182500470158 /* CofficientModel.swift in Sources */,
@@ -161,6 +160,7 @@
 				3E25C52224C6E203009F0B4F /* AppDelegate.swift in Sources */,
 				3E25C53624C6E82C009F0B4F /* OneComponentViewController.swift in Sources */,
 				3E25C52424C6E203009F0B4F /* SceneDelegate.swift in Sources */,
+				3E3E77F724D9A5020013E318 /* ResultTwoComponent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

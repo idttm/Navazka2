@@ -13,11 +13,13 @@ protocol CofficientBoardDelegate: class {
     func saveCofficients(cofficient: [CofficientModel])
 }
 
+ 
+
 class CofficientBoard: UIViewController {
     
     var deligete: CofficientBoardDelegate?
+   
     var elementValue = 2 
-    
     @IBOutlet weak var nameOneElementView: UITextField!
     @IBOutlet weak var nemeTwoElementView: UITextField!
     @IBOutlet weak var nameThreeElementView: UITextField!
@@ -66,7 +68,7 @@ class CofficientBoard: UIViewController {
         if errorTableView != nil {
             errorTableView.isHidden = false
         }
-       
+        
     }
     
     func errorPercent() {
@@ -92,12 +94,12 @@ class CofficientBoard: UIViewController {
             let name2 = nemeTwoElementView.text,
             let value1Sring = valueOneElementView.text,
             let value2Sring = valueTwoElementView.text,
-        let value1Double = Double(value1Sring),
-        let value2Double = Double(value2Sring),
-        let percent1Sring  = percentOneElementView.text,
-        let percent2Sring = percentTwoElementView.text,
-        let percent1Double = Double(percent1Sring),
-        let percent2Double = Double(percent2Sring)
+            let value1Double = Double(value1Sring),
+            let value2Double = Double(value2Sring),
+            let percent1Sring  = percentOneElementView.text,
+            let percent2Sring = percentTwoElementView.text,
+            let percent1Double = Double(percent1Sring),
+            let percent2Double = Double(percent2Sring)
             else { return }
         let value1 = CofficientModel(name: name1, value: value1Double, procient: percent1Double)
         let value2 = CofficientModel(name: name2, value: value2Double, procient: percent2Double)
@@ -132,25 +134,25 @@ class CofficientBoard: UIViewController {
             let value5 = CofficientModel(name: name5, value: value5Double, procient: percent5Double)
             values.append(value5)
         }
-            
-        deligete?.saveCofficients(cofficient: values)
-        guard let proc3S = percentThreeElementView.text,
-        let proc3D = Double(proc3S),
-        let proc4S = percentFourElementView.text,
-        let proc4D = Double(proc4S),
-        let proc5S = percentFiveElementView.text,
-        let proc5D = Double(proc5S)
-            else { return }
-        func errorPercent () {
-        if percent1Double + percent2Double + proc3D + proc4D + proc5D != 100 {
-            errorTableView.text = "Процентноее соотношение компонетнов неверно"
-        } else {  dismiss(animated: true) }
-    }
-       
         
-
+        let arrayProcent = [percentOneElementView.text, percentTwoElementView.text, percentThreeElementView.text, percentFourElementView.text, percentFiveElementView.text]
+        let result = arrayProcent.compactMap({$0}).map({Double($0)}).compactMap({$0}).reduce(0,+)
+        if result == 100 {
+            deligete?.saveCofficients(cofficient: values)
+            dismiss(animated: true)
+        } else {
+        errorTableView.text = "Процентноее соотношение компонетнов неверно"
+        }
     }
+}
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
 
-    
-}
