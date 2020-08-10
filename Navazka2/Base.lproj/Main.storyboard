@@ -131,12 +131,15 @@
                                 <connections>
                                     <action selector="countAction:" destination="HRS-Q0-bDw" eventType="touchUpInside" id="7mg-Lz-27C"/>
                                     <action selector="countResult:" destination="9U0-sM-qZi" eventType="touchUpInside" id="nm9-DZ-D6f"/>
-                                    <segue destination="6Hr-Nd-hGQ" kind="show" id="nQe-Hm-Oxh"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="X5I-rO-Vhj"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="W9Z-4l-H5b" appends="YES" id="WgX-qh-7FX"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="THA-Vv-fvz"/>
                     <connections>
@@ -147,6 +150,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="01f-ak-QM0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="W9Z-4l-H5b">
+                    <connections>
+                        <action selector="noKeyboardAction:" destination="9U0-sM-qZi" id="FNP-qD-tRr"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1861.5999999999999" y="-632.83358320839591"/>
         </scene>
@@ -286,7 +294,11 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="KRF-2N-tGP"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="MQt-nK-zmw" appends="YES" id="PvB-Rz-ONa"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="4D0-zX-kPa"/>
                     <connections>
@@ -309,6 +321,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Nz-1o-Ehh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="MQt-nK-zmw">
+                    <connections>
+                        <action selector="noKayboardAction:" destination="Eak-ah-zvi" id="NWB-Nb-k3y"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2704.8000000000002" y="-633.73313343328346"/>
         </scene>
@@ -416,7 +433,7 @@
         <!--Result Two Component-->
         <scene sceneID="cvN-Ib-utK">
             <objects>
-                <viewController id="6Hr-Nd-hGQ" customClass="ResultTwoComponent" customModule="Navazka2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ResultTwoComponent" id="6Hr-Nd-hGQ" customClass="ResultTwoComponent" customModule="Navazka2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="A9e-RV-0bg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

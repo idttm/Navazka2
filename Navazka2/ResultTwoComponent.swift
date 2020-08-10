@@ -6,19 +6,19 @@
 //  Copyright © 2020 Andrew Cheberyako. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-class  ResultTwoComponent: ViewController {
+class  ResultTwoComponent: UIViewController {
 
-   var resultElement = TwoComponentViewController()
+    var resultElement = String()
+    
     
     @IBOutlet weak var resultView: UILabel!
     
-
+    
     override func viewDidLoad() {
-    super.viewDidLoad()
-        resultView.text = TwoComponentViewController.outputReseult()
+        super.viewDidLoad()
+        resultView.text = resultElement
     }
     
 }

@@ -69,6 +69,7 @@ class CofficientBoard: UIViewController {
             errorTableView.isHidden = false
         }
         
+        
     }
     
     func errorPercent() {
@@ -144,6 +145,15 @@ class CofficientBoard: UIViewController {
         errorTableView.text = "Процентноее соотношение компонетнов неверно"
         }
     }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(false)
+        return false
+    }
+    @IBAction func noKayboardAction(_ sender: UITapGestureRecognizer) {
+        textFieldShouldReturn(nameOneElementView)
+        
+    }
+    
 }
     
     

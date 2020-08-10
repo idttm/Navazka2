@@ -43,6 +43,7 @@ class OneComponentViewController: UIViewController {
         return false
     }
     
+    
     @IBAction func noKeyboard(_ sender: UITapGestureRecognizer) {
         textFieldShouldReturn(valumeFinishedProducnt)
         textFieldShouldReturn(densityElement)

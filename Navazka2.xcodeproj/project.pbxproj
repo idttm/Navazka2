@@ -12,7 +12,6 @@
 		3E046E1324CE182500470158 /* CofficientModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E046E1224CE182500470158 /* CofficientModel.swift */; };
 		3E25C52224C6E203009F0B4F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E25C52124C6E203009F0B4F /* AppDelegate.swift */; };
 		3E25C52424C6E203009F0B4F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E25C52324C6E203009F0B4F /* SceneDelegate.swift */; };
-		3E25C52624C6E203009F0B4F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E25C52524C6E203009F0B4F /* ViewController.swift */; };
 		3E25C52924C6E203009F0B4F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E25C52724C6E203009F0B4F /* Main.storyboard */; };
 		3E25C52B24C6E205009F0B4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E25C52A24C6E205009F0B4F /* Assets.xcassets */; };
 		3E25C52E24C6E205009F0B4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E25C52C24C6E205009F0B4F /* LaunchScreen.storyboard */; };
@@ -27,7 +26,6 @@
 		3E25C51E24C6E203009F0B4F /* Navazka2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Navazka2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E25C52124C6E203009F0B4F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3E25C52324C6E203009F0B4F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3E25C52524C6E203009F0B4F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3E25C52824C6E203009F0B4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3E25C52A24C6E205009F0B4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3E25C52D24C6E205009F0B4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -68,7 +66,6 @@
 			children = (
 				3E25C52124C6E203009F0B4F /* AppDelegate.swift */,
 				3E25C52324C6E203009F0B4F /* SceneDelegate.swift */,
-				3E25C52524C6E203009F0B4F /* ViewController.swift */,
 				3E25C52724C6E203009F0B4F /* Main.storyboard */,
 				3E25C53524C6E82C009F0B4F /* OneComponentViewController.swift */,
 				3E046E0C24CCB36C00470158 /* TwoComponent.swift */,
@@ -154,7 +151,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E046E0F24CCB8DF00470158 /* CofficientBoard.swift in Sources */,
-				3E25C52624C6E203009F0B4F /* ViewController.swift in Sources */,
 				3E046E1324CE182500470158 /* CofficientModel.swift in Sources */,
 				3E046E0D24CCB36C00470158 /* TwoComponent.swift in Sources */,
 				3E25C52224C6E203009F0B4F /* AppDelegate.swift in Sources */,

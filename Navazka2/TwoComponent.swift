@@ -18,6 +18,7 @@ class TwoComponentViewController: UIViewController, CofficientBoardDelegate {
     @IBOutlet weak var nomberElementView: UILabel!
     @IBOutlet weak var cofficientView: UITextField!
     
+    
     func resultTwo () -> Double {
         let volume = volumeView.text!
         let porosity = porosityView.text!
@@ -48,11 +49,12 @@ class TwoComponentViewController: UIViewController, CofficientBoardDelegate {
 //                print("\($0.name), количество вещества в г/см^3 -  \($0.re)")
 //        }
 //    }
-    func outputReseult () {
-        cofficients.forEach {
-            print("\($0.name), количество вещества в г/см^3 - \($0.procient * resultTwo() / 100)")
-        }
-    }
+//    func outputReseult () {
+//        cofficients
+//            .forEach {
+//            print("\($0.name), количество вещества в г - \($0.procient * resultTwo() / 100)")
+//        }
+//    }
 
     @IBAction func showCofficientBoardAction(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -90,9 +92,30 @@ class TwoComponentViewController: UIViewController, CofficientBoardDelegate {
         nomberElementView.text = String(sender.value)
     }
     
+    
+    
     @IBAction func countResult(_ sender: UIButton) {
-       outputReseult()
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "ResultTwoComponent") as? ResultTwoComponent
+            else { return }
+
+        vc.resultElement =
+            cofficients.map { value in
+                return "\(value.name) количество вещества в г - \((NSString(format:"%.3f", (value.procient * resultTwo() / 100))))\n"
+        }.reduce("", +)
+        present(vc, animated: true)
         
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+    @IBAction func noKeyboardAction(_ sender: UITapGestureRecognizer) {
+        textFieldShouldReturn(volumeView)
+        textFieldShouldReturn(porosityView)
+        textFieldShouldReturn(cofficientView)
+    }
+    
     
 }
