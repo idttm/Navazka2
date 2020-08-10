@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class TwoComponentViewController: UIViewController, CofficientBoardDelegate {
+class TwoComponentViewController: UIViewController, CofficientBoardDelegate, UITextFieldDelegate {
     
     var cofficients = [CofficientModel]()
     
@@ -107,15 +107,23 @@ class TwoComponentViewController: UIViewController, CofficientBoardDelegate {
         
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//        self.view.endEditing(true)
+//        return false
+//    }
+//    @IBAction func noKeyboardAction(_ sender: UITapGestureRecognizer) {
+//        textFieldShouldReturn(volumeView)
+//        textFieldShouldReturn(porosityView)
+//        textFieldShouldReturn(cofficientView)
+//    }
+    override func viewDidLoad(){
+        super.viewDidLoad()
+        volumeView.delegate = self
+    }
+
+    func textFieldShouldReturn(_ volumeView: UITextField) -> Bool {
         self.view.endEditing(true)
-        return false
+        return true
     }
-    @IBAction func noKeyboardAction(_ sender: UITapGestureRecognizer) {
-        textFieldShouldReturn(volumeView)
-        textFieldShouldReturn(porosityView)
-        textFieldShouldReturn(cofficientView)
-    }
-    
     
 }
